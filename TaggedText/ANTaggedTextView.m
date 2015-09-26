@@ -31,8 +31,6 @@
     self = [super init];
     if (self) {
         self.delegate = self;
-        self.textContainerInset = (NSSize){0,0};
-        self.textContainer.lineFragmentPadding = 0;
     }
     return self;
 }
@@ -43,41 +41,39 @@
      ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
          if ([attributes objectForKey:@"Tag"] != nil)
          {
-             NSRect rect = [self frame];
-             rect = NSInsetRect(rect, self.textContainer.lineFragmentPadding, -1.0f);
-
              NSDictionary* tagAttributes = [self.attributedString attributesAtIndex:range.location effectiveRange:nil];
-             NSPoint point = [self.textContainer.layoutManager locationForGlyphAtIndex:range.location];
-
+             NSSize oneCharSize = [@"a" sizeWithAttributes:tagAttributes];
+             NSRange activeRange = [self.layoutManager glyphRangeForCharacterRange:range actualCharacterRange:NULL];
+             NSRect tagRect = [self.layoutManager boundingRectForGlyphRange:activeRange inTextContainer:self.textContainer];
+             tagRect.origin.x += self.textContainerOrigin.x;
+             tagRect.origin.y += self.textContainerOrigin.y;
+             tagRect = [self convertRectToLayer:tagRect];
+             NSRect tagBorderRect = (NSRect){ (NSPoint){tagRect.origin.x+oneCharSize.width*0.25, tagRect.origin.y+2}, (NSSize){tagRect.size.width-oneCharSize.width*0.66, tagRect.size.height} };
              
              [NSGraphicsContext saveGraphicsState];
-             NSSize size = (NSSize) [[self.string substringWithRange:range] sizeWithAttributes: [self.attributedString fontAttributesInRange:(NSRange){range.location, range.length}]];
-             point.y = rect.origin.y;
-             
-             NSRect attributedRect = (NSRect){point, size};
-             
-             NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:attributedRect xRadius:5.0f yRadius:5.0f];
-             NSColor* strokeColor = [NSColor colorWithCalibratedRed:163.0/255.0 green:188.0/255.0 blue:234.0/255.0 alpha:1];
-             NSColor* fillColor = [NSColor colorWithCalibratedRed:217.0/255.0 green:228.0/255.0 blue:247.0/255.0 alpha:1];
+             NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:tagBorderRect xRadius:3.0f yRadius:3.0f];
+             NSColor* fillColor = [NSColor colorWithCalibratedRed:237.0/255.0 green:243.0/255.0 blue:252.0/255.0 alpha:1];
+             NSColor* strokeColor = [NSColor colorWithCalibratedRed:163.0/255.0 green:188.0/255.0 blue:234.0/255.0 alpha:1];             
              NSColor* textColor = [NSColor colorWithCalibratedRed:37.0/255.0 green:62.0/255.0 blue:112.0/255.0 alpha:1];
              
              [path addClip];
              [fillColor setFill];
              [strokeColor setStroke];
-             NSRectFillUsingOperation(attributedRect, NSCompositeSourceOver);
+             NSRectFillUsingOperation(tagBorderRect, NSCompositeSourceOver);
              NSAffineTransform *transform = [NSAffineTransform transform];
              [transform translateXBy: 0.5 yBy: 0.5];
              [path transformUsingAffineTransform: transform];
              [path stroke];
-             [transform translateXBy: -1 yBy: -1];
+             [transform translateXBy: -1.5 yBy: -1.5];
              [path transformUsingAffineTransform: transform];
              [path stroke];
              
              NSMutableDictionary* attrs = [NSMutableDictionary dictionaryWithDictionary:tagAttributes];
-             [attrs addEntriesFromDictionary:@{NSForegroundColorAttributeName: textColor}];
-             [[self.attributedString.string substringWithRange:range] drawAtPoint:point withAttributes: attrs];
-             
-             
+             NSFont* font = [tagAttributes valueForKey:NSFontAttributeName];
+             font = [[NSFontManager sharedFontManager] convertFont:font toSize:[font pointSize] - 0.25];
+             [attrs addEntriesFromDictionary:@{NSFontAttributeName: font, NSForegroundColorAttributeName: textColor}];
+             [[self.attributedString.string substringWithRange:range] drawInRect:tagRect withAttributes:attrs];
+
              [NSGraphicsContext restoreGraphicsState];
          }
      }];

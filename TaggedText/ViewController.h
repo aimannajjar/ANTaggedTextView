@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 @class ANTaggedTextFieldCell;
 @interface ViewController : NSViewController
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 @property (weak) IBOutlet NSTextField *textField;
 @end
 

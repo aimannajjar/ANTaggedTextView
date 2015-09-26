@@ -27,7 +27,7 @@
 
 @implementation ANTaggedTextField
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRecaat:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     [self.attributedStringValue enumerateAttributesInRange:(NSRange){0, self.stringValue.length} options:NSAttributedStringEnumerationReverse usingBlock:
      ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
