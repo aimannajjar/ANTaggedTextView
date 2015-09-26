@@ -1,6 +1,6 @@
 # ANTaggedTextView
 
-![ANTaggedTextView screenshot](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView.png)
+![ANTaggedTextView screenshot1](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView.png)
 
 ANTaggedTextView is basically Cocoa NSTextView and NSTextFiled subclasses that enable you to use `NSAttributedString` to display linkable Facebook-like tags in your text views and fields (also works well when in a view-basled NSTableView). Unfortunately I currently only have an OS X implementation. Please keep in mind that I have built this after only a few weeks of learning Cocoa, pull requests are encouraged :-)
 
@@ -29,8 +29,8 @@ self.textView.textContainerInset = (NSSize){10,10};
 
 ### Text Fields
 For text fields, usage is similar, you will have to set NSTextField's subclass to `ANTaggedTextField`:
-![ANTaggedTextView screenshot2](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example1.png)
+![ANTaggedTextView screenshot3](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example1.png)
 
 **And** also NSTextFieldCell's to `ANTaggedTextFieldCell`:
 
-![ANTaggedTextView screenshot2](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example2.png)
+![ANTaggedTextView screenshot4](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example2.png)
