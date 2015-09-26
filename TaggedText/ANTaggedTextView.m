@@ -48,7 +48,7 @@
              tagRect.origin.x += self.textContainerOrigin.x;
              tagRect.origin.y += self.textContainerOrigin.y;
              tagRect = [self convertRectToLayer:tagRect];
-             NSRect tagBorderRect = (NSRect){ (NSPoint){tagRect.origin.x+oneCharSize.width*0.25, tagRect.origin.y+1}, (NSSize){tagRect.size.width-oneCharSize.width*0.66, tagRect.size.height} };
+             NSRect tagBorderRect = (NSRect){ (NSPoint){tagRect.origin.x-oneCharSize.width*0.25, tagRect.origin.y+1}, (NSSize){tagRect.size.width+oneCharSize.width*0.33, tagRect.size.height} };
              
              [NSGraphicsContext saveGraphicsState];
              NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:tagBorderRect xRadius:3.0f yRadius:3.0f];

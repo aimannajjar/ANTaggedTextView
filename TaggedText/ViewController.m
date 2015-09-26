@@ -27,12 +27,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableAttributedString *content = [[NSMutableAttributedString alloc] initWithString:@"Hello World, this is a tagged text field! "];
-    [content addAttribute:@"Tag" value:@1 range:(NSRange){22, 8}];
-    [content addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:13.0] range:(NSRange){0, content.length}];
-    self.textField.attributedStringValue = content;
+    NSMutableAttributedString *textFieldContent = [[NSMutableAttributedString alloc] initWithString:@"Hello World, this is an ANTaggedTextField"];
+    [textFieldContent addAttribute:@"Tag" value:@1 range:[textFieldContent.string rangeOfString:@"ANTaggedTextField"]];
+    [textFieldContent addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:13.0] range:(NSRange){0, textFieldContent.length}];
+    self.textField.attributedStringValue = textFieldContent;
     self.textView.textContainerInset = (NSSize){10,10};
-    [self.textView.textStorage setAttributedString:content];
+
+    NSString* content = @"Hello World\nThis is a tagged text view. Created by Aiman Najjar.\nThis is my first attempt at this. So please feel free to submit PRs";
+    NSMutableAttributedString *textViewContent = [[NSMutableAttributedString alloc] initWithString:content];
+    [textViewContent addAttribute:@"Tag" value:@1 range:NSMakeRange(0, 5)];
+    [textViewContent addAttribute:@"Tag" value:@1 range:[content rangeOfString:@"tagged"]];
+    [textViewContent addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:13.0] range:(NSRange){0, textViewContent.length}];
+    
+    
+    
+    
+    [self.textView.textStorage setAttributedString:textViewContent];
 
 }
 
