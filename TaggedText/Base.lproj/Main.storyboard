@@ -669,14 +669,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="782" height="404"/>
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="235"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2gv-92-KSg" customClass="ANTaggedTextField">
-                                <rect key="frame" x="20" y="248" width="742" height="148"/>
+                                <rect key="frame" x="20" y="202" width="395" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="148" id="s5B-1a-Zvh"/>
-                                    <constraint firstAttribute="width" constant="742" id="tko-0f-bJg"/>
+                                    <constraint firstAttribute="height" constant="25" id="s5B-1a-Zvh"/>
+                                    <constraint firstAttribute="width" constant="395" id="tko-0f-bJg"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" allowsEditingTextAttributes="YES" id="RAk-Tz-vvJ" customClass="ANTaggedTextFieldCell">
                                     <font key="font" metaFont="system"/>
@@ -685,7 +685,7 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-BP-GWC">
-                                <rect key="frame" x="20" y="20" width="742" height="220"/>
+                                <rect key="frame" x="20" y="20" width="395" height="166"/>
                                 <clipView key="contentView" id="UGa-yI-85J">
                                     <rect key="frame" x="1" y="1" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,7 +694,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="725" height="218"/>
+                                            <size key="minSize" width="378" height="164"/>
                                             <size key="maxSize" width="725" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Hello Wold">
@@ -705,14 +705,14 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="725" height="218"/>
+                                            <size key="minSize" width="378" height="164"/>
                                             <size key="maxSize" width="725" height="10000000"/>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="742" id="L5F-vO-ydm"/>
+                                    <constraint firstAttribute="width" constant="395" id="L5F-vO-ydm"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="h5T-cQ-xoM">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
@@ -726,7 +726,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="2gv-92-KSg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="77G-7q-tOx"/>
-                            <constraint firstItem="RSa-BP-GWC" firstAttribute="top" secondItem="2gv-92-KSg" secondAttribute="bottom" constant="8" id="79M-Zi-519"/>
+                            <constraint firstItem="RSa-BP-GWC" firstAttribute="top" secondItem="2gv-92-KSg" secondAttribute="bottom" constant="16" id="79M-Zi-519"/>
                             <constraint firstItem="2gv-92-KSg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Ee3-d3-Yrn"/>
                             <constraint firstItem="RSa-BP-GWC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="bAg-oI-ZCc"/>
                             <constraint firstAttribute="trailing" secondItem="2gv-92-KSg" secondAttribute="trailing" constant="20" id="gTb-FB-QDv"/>
@@ -741,7 +741,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="733"/>
+            <point key="canvasLocation" x="-111.5" y="648.5"/>
         </scene>
     </scenes>
 </document>

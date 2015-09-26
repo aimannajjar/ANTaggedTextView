@@ -16,6 +16,7 @@
 		FE35D23E1BB62ADE00C199AC /* ANTaggedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FE35D2391BB62ADE00C199AC /* ANTaggedTextField.m */; };
 		FE35D23F1BB62ADE00C199AC /* ANTaggedTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE35D23B1BB62ADE00C199AC /* ANTaggedTextFieldCell.m */; };
 		FE35D2401BB62ADE00C199AC /* ANTaggedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE35D23D1BB62ADE00C199AC /* ANTaggedTextView.m */; };
+		FE35D24B1BB7036D00C199AC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FE35D24A1BB7036D00C199AC /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FE35D23B1BB62ADE00C199AC /* ANTaggedTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTaggedTextFieldCell.m; sourceTree = "<group>"; };
 		FE35D23C1BB62ADE00C199AC /* ANTaggedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTaggedTextView.h; sourceTree = "<group>"; };
 		FE35D23D1BB62ADE00C199AC /* ANTaggedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTaggedTextView.m; sourceTree = "<group>"; };
+		FE35D24A1BB7036D00C199AC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		FE35D2051BB6215D00C199AC = {
 			isa = PBXGroup;
 			children = (
+				FE35D24A1BB7036D00C199AC /* LICENSE */,
 				FE35D2101BB6215E00C199AC /* TaggedText */,
 				FE35D2271BB6215E00C199AC /* TaggedTextTests */,
 				FE35D20F1BB6215E00C199AC /* Products */,
@@ -219,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE35D24B1BB7036D00C199AC /* LICENSE in Resources */,
 				FE35D21C1BB6215E00C199AC /* Images.xcassets in Resources */,
 				FE35D21F1BB6215E00C199AC /* Main.storyboard in Resources */,
 			);
@@ -433,6 +437,7 @@
 				FE35D2301BB6215E00C199AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE35D2311BB6215E00C199AC /* Build configuration list for PBXNativeTarget "TaggedTextTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +446,7 @@
 				FE35D2331BB6215E00C199AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
