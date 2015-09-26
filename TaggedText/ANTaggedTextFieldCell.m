@@ -37,6 +37,7 @@
         self.fieldEditor = [[ANTaggedTextView alloc] init];
         self.fieldEditor.fieldEditor = YES;
     }
+    
     return self.fieldEditor;
 }
 
