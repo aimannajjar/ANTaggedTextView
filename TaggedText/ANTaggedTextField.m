@@ -30,8 +30,6 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 
-    NSTextView *fieldEditor = (NSTextView*)[self.window fieldEditor:NO forObject:self];
-
     [self.attributedStringValue enumerateAttributesInRange:(NSRange){0, self.stringValue.length} options:NSAttributedStringEnumerationReverse usingBlock:
      ^(NSDictionary *attributes, NSRange range, BOOL *stop) {
          if ([attributes objectForKey:@"Tag"] != nil)
@@ -41,7 +39,7 @@
              NSLayoutManager *layoutManager = [[NSLayoutManager alloc]init];
              [layoutManager addTextContainer:textContainer];
              [textStorage addLayoutManager:layoutManager];
-             [textContainer setLineFragmentPadding: fieldEditor.textContainer.lineFragmentPadding];
+             [textContainer setLineFragmentPadding: 2];
              NSRect tagRect = [layoutManager boundingRectForGlyphRange:range inTextContainer:textContainer];
 
              
