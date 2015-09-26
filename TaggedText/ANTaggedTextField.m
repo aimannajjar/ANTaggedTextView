@@ -42,8 +42,15 @@
              [layoutManager addTextContainer:textContainer];
              [textStorage addLayoutManager:layoutManager];
              [textContainer setLineFragmentPadding: fieldEditor.textContainer.lineFragmentPadding];
-             [layoutManager glyphRangeForTextContainer:textContainer];
              NSRect tagRect = [layoutManager boundingRectForGlyphRange:range inTextContainer:textContainer];
+
+             
+             if (self.bezeled)
+             {
+                 tagRect.origin.y += 3;
+                 tagRect.origin.x += 2;
+                 tagRect.size.height += 1;
+             }
              
              NSDictionary* tagAttributes = [self.attributedStringValue attributesAtIndex:range.location effectiveRange:nil];
              NSSize oneCharSize = [@"a" sizeWithAttributes:tagAttributes];
