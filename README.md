@@ -34,3 +34,10 @@ For text fields, usage is similar, you will have to set NSTextField's subclass t
 **And** also NSTextFieldCell's to `ANTaggedTextFieldCell`:
 
 ![ANTaggedTextView screenshot4](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example2.png)
+
+### View-based Table Views
+
+![ANTaggedTextView screenshot5](https://s3.amazonaws.com/aimannajjar.com/assets/images/portfolio/ANTaggedTextView_example3.png)
+
+`ANTaggedTextField` works out of the box with table views. Make sure to follow the same instructions in the section above for Text Fields.
+
